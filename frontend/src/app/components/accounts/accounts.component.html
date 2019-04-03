@@ -1,0 +1,16 @@
+<div class="jumbotron">
+    <h1>Accounts</h1>
+  </div>
+  
+  <div class="w3-container">
+    <div class="col-sm-15">
+      <div class="list-group">
+        <a href="#" class="list-group-item" *ngFor="let account of accountList">
+          <h4 class="list-group-item-heading">
+          <i class="glyphicon glyphicon-bullhorn"></i> {{ account.email }}</h4>
+          <h5><i class="glyphicon glyphicon-bullhorn"></i> {{ account.name }}</h5>
+          <button class="btn btn-xs btn-danger" v-on:click="deleteEvent(event.id)">Delete</button>
+        </a>
+      </div>
+    </div>
+  </div>
