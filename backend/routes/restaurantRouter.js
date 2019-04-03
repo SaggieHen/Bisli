@@ -1,6 +1,7 @@
 const express = require("express");
 var router = express.Router();
 var restaurantController = require("../controllers/restaurantController");
+var accountController = require("../controllers/accountController");
 
 async function restaurant(request, response, next){
     try{
