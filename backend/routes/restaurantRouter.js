@@ -32,6 +32,20 @@ async function createRestaurant(request, response, next){
         next(err);
     }
 }
+
+async function deleteRestaurant(request, response, next){
+    try{
+        let id = request.body["_id"];
+        await restaurantController.deleteRestaurant(id);
+        response.json(
+        );
+    }
+    catch(err){
+        next(err);
+    }
+}
+
 router.get("/",restaurant);
 router.post("/",createRestaurant);
+router.delete("/",deleteRestaurant);
 module.exports = router;

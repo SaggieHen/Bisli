@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpParams, HttpHeaders } from '@angular/common/http';
+import { RequestOptions } from '@angular/http';
 
 @Component({
   selector: 'app-restaurants',
@@ -16,4 +17,15 @@ export class RestaurantsComponent implements OnInit {
     })
   }
 
+  deleteRestaurant(restaurantID){
+    let headers= new HttpHeaders().append( 'Content-Type', 'application/json');
+    let options= new RequestOptions({headers: headers});
+    const params = new HttpParams().set('_id', restaurantID);
+    this.http.delete('http://localhost:3001/restaurant',{params}).subscribe(
+      result => console.log(result),
+      err => console.error(err)
+    )
+  }
+
 }
+

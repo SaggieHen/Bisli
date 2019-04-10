@@ -27,10 +27,17 @@ class restaurantController{
         catch(err){}
     }
 
-    static async getRestaurantByName(name){
+    static async getRestaurantByName(restaurantName){
         try{
-            let restaurantList = await Restaurant.find({name: name});
+            let restaurantList = await Restaurant.find({name: restaurantName});
             return restaurantList;
+        }
+        catch(err){}
+    }
+
+    static async deleteRestaurant(restaurantID){
+        try{
+            await Restaurant.find({_id: restaurantID}).deleteOne();
         }
         catch(err){}
     }

@@ -10,7 +10,7 @@
         <i class="glyphicon glyphicon-bullhorn"></i> {{ restaurant.name }}</h4>
         <h5><i class="glyphicon glyphicon-calendar"></i> {{ restaurant.detail }}</h5>
         <p class="list-group-item-text">{{ restaurant.detail }}</p>
-        <button class="btn btn-xs btn-danger" v-on:click="deleteEvent(event.id)">Delete</button>
+        <button class="btn btn-xs btn-danger" (click)="deleteRestaurant(restaurant._id)">Delete</button>
       </a>
     </div>
   </div>
